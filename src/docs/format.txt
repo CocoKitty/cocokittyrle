@@ -1,0 +1,17 @@
+
+FORMAT FOR RLE BIN FILES
+
+the format of the files will be pretty
+simple to avoid most bugs, and because
+this project has no practical use
+
+file section 1: header
+4 byte constant string: "RLE", to verify the file is correct format
+8 bit major version: to verify correct version
+8 bit minor version: to verify correct version
+
+file section 2: data
+
+(repeated)
+	1 byte char: the character
+	1 byte uint: the amount of times repeated
