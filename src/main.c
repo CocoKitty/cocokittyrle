@@ -113,14 +113,18 @@ int parse_args(int argc, char** argv, char* fail_string,
 	}
     strncpy( options->output_file, argv[curr_arg], FILE_STRING_SIZE );
 
+	
     // set args to default values
     options->verbose = false;
     options->dont_compress = false;
     // check for args
 
-    if (argc == 4) {
-        return 0;
-    }
+	if (*oper == OPER_VIEW) {
+		curr_arg++;
+		if (curr_arg == argc) {
+			return 0;
+		}
+	}
 
     for (int i = curr_arg; i != argc; ++i) {
         if ( strcmp(argv[i], "-v") == 0 ||
@@ -137,7 +141,7 @@ int parse_args(int argc, char** argv, char* fail_string,
             options->dont_compress = true;
 
         } else {
-			snprintf(fail_string, FILE_STRING_SIZE, "invalid operation: %s",
+			snprintf(fail_string, FILE_STRING_SIZE, "invalid option: %s",
 					argv[i] );
 			return 1;
 		}
