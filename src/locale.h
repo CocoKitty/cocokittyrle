@@ -4,7 +4,7 @@
 "	operation:\n" \
 "		-e, --encode: encodes the file specified by <file-name>\n" \
 "		-d, --decode: decodes the file specified by <file-name>\n" \
-"		-s, --show: shows the file specified by <file-name> in a 
+"		-s, --show: shows the file specified by <file-name> in a" \
 			"human-readable manner\n" \
 "		-v, --version: shows version of program\n" \
 "		-h, --help: ignores rest of command and prints help message\n" \
